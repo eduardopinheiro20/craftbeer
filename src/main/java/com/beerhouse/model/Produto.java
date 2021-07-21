@@ -1,6 +1,6 @@
 package com.beerhouse.model;
 
-import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -8,11 +8,13 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@AllArgsConstructor
 @Entity
 @Data
 public class Produto {
 
     @Id
+    @SequenceGenerator(name = "produto_seq", sequenceName = "produto_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -29,7 +31,12 @@ public class Produto {
 
     private Integer quantidade;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
+
+    public Produto() {
+
+    }
 
 }

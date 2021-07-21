@@ -1,5 +1,6 @@
 package com.beerhouse.model;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -17,9 +18,9 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     private String nome;
 
     public Categoria() {
-
     }
 }

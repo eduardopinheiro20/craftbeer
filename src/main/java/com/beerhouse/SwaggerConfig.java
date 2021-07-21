@@ -1,4 +1,4 @@
-package com.beerhouse.config;
+package com.beerhouse;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
