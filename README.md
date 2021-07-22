@@ -24,7 +24,7 @@ O endereço deste repositório deverá ser enviado para o contato do nosso RH ap
 
 ## Especificação do projeto
 
-A beer house é uma empresa possui um catálogo de cervejas artesanais. Esta empresa está buscando entrar no mundo digital.
+A beer house é uma empresa que possui um catálogo de cervejas artesanais. Esta empresa está buscando entrar no mundo digital.
 Para entrar no mundo digital a beer house dicidiu começar pelas APIs. As APIs serão utilizadas para compartilhar dados com os parceiros e também para o seu sistema web.
 
 Pra atender a esta demanda será necessário que a você implemente as APIs do projeto beer house.
