@@ -8,7 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
+/**
+ * @Author Eduardo Pinheiro
+ */
 @AllArgsConstructor
 @Entity
 @Data
@@ -18,6 +22,7 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty(message = "O campo nome da categoria é obrigatório")
     @NotNull
     private String nome;
 

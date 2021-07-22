@@ -32,19 +32,19 @@ public class ProdutoController {
 
     @PostMapping("/produto")
     @ApiOperation(value = "Cadastra um produto")
-    public Produto add(@RequestBody Produto pProduto) {
+    public Produto createProduto(@RequestBody Produto pProduto) {
         return produtoRepository.save(pProduto);
     }
 
     @DeleteMapping("/produto")
     @ApiOperation(value = "Deleta um produto")
-    public void delete(@RequestBody Produto pProduto) {
+    public void deleteProduto(@RequestBody Produto pProduto) {
         produtoRepository.delete(pProduto);
     }
 
     @PutMapping("/produto")
     @ApiOperation(value = "Altera um produto")
-    public Produto update(@RequestBody Produto pProduto) {
+    public Produto updateProduto(@RequestBody Produto pProduto) {
         return produtoRepository.save(pProduto);
     }
 }

@@ -5,9 +5,14 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
+/**
+ * @Author Eduardo Pinheiro
+ */
 @AllArgsConstructor
 @Entity
 @Data
@@ -18,6 +23,7 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty(message = "O campo nome do produto é obrigatório")
     private String nome;
 
     private String ingredientes;

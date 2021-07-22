@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * @Author Eduardo Pinheiro
+ */
 @RestController
 @RequestMapping("/api")
 @Api(value = "API REST Beer House")
@@ -20,31 +23,31 @@ public class CategoriaController {
 
     @GetMapping("/categorias")
     @ApiOperation(value = "Retona uma lista de categorias")
-    public List<Categoria> getCategorias() {
+    public List<Categoria> getCategories() {
         return categoriaRepository.findAll();
     }
 
     @GetMapping("/categoria/{id}")
     @ApiOperation(value = "Retona uma categoria unica")
-    public Categoria getCategoriaById(@PathVariable(value = "id") long id) {
+    public Categoria getCategoryById(@PathVariable(value = "id") long id) {
         return categoriaRepository.findById(id);
     }
 
     @PostMapping("/categoria")
     @ApiOperation(value = "Cadastra um produto")
-    public Categoria add(@RequestBody Categoria pCategoria) {
+    public Categoria createCategory(@RequestBody Categoria pCategoria) {
         return categoriaRepository.save(pCategoria);
     }
 
     @DeleteMapping("/categoria")
     @ApiOperation(value = "Deleta uma categoria")
-    public void delete(@RequestBody Categoria pCategoria) {
+    public void deleteCategory(@RequestBody Categoria pCategoria) {
         categoriaRepository.delete(pCategoria);
     }
 
     @PutMapping("/categoria")
     @ApiOperation(value = "Altera um categoria")
-    public Categoria update(@RequestBody Categoria pCategoria) {
+    public Categoria updateCategory(@RequestBody Categoria pCategoria) {
         return categoriaRepository.save(pCategoria);
     }
 }
